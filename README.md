@@ -1,10 +1,10 @@
 # :sun_with_face: Awesome Security Tool List :four_leaf_clover:
 
-This is a list of security tools that I have used or recommend. Welcome any contributions! :muscle: 
+This is a list of security tools that I have used or recommend. Welcome any contributions! :muscle:
 
 & Wish you all good luck on your way of finding the hidden treasures. :wink:
 
-## Tools
+## :sun_with_face: Tools
 
 1. [Binwalk](https://github.com/ReFirmLabs/binwalk): Firmware analysis & reverse engineering.
    - **Example: `binwalk -Mre <filename>`**
@@ -13,6 +13,6 @@ This is a list of security tools that I have used or recommend. Welcome any cont
    - `-e`: extract known file types.
 2.
 
-## Special Thanks
+## :sun_with_face: Special Thanks
 
-- Cute emojis from [here](https://gist.github.com/rxaviers/7360908) :blush:!
+- Cute emojis from [here](https://gist.github.com/rxaviers/7360908)! :blush:
