@@ -19,7 +19,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
    - mipsel: little-endian MIPS / mips: big-endian MIPS ([little vs big endian?](https://chortle.ccsu.edu/AssemblyTutorial/Chapter-15/ass15_3.html))
 
 3. [Ghidra](https://ghidra-sre.org/): Decompile binary files.
-   - Satisfy the [minimum requirements](https://ghidra-sre.org/InstallationGuide.html#Requirements) (Java 11 JDK) and then download Ghidra from the above website.
+   - Satisfy the [minimum requirements](https://ghidra-sre.org/InstallationGuide.html#Requirements) (Java 11 JDK) and download Ghidra from the above website.
    - After extracting the downloaded Ghidra package, open `ghidraRun.bat` to start.
    - Select New project > Import Files, then select your binary file to analyze.
    - In the `Symbol Tree` tab on the left, find and select `main` under `Functions`.
@@ -36,7 +36,18 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 2. **`xdg-open .`: Open current folder in GUI explorer.**
    - This is useful for drag and drop files from Linux VM to host computer.
    - reference: [StackExchange](https://askubuntu.com/questions/31069/how-to-open-a-file-manager-of-the-current-directory-in-the-terminal)
-3.
+3. **`kill $(lsof -t -i:8080)`: Kill any process listening on port 8080**
+   - reference: [StackOverflow](https://stackoverflow.com/questions/11583562/how-to-kill-a-process-running-on-particular-port-in-linux)
+4. **`display <image_name>`: Display image from terminal.**
+   - Make sure that [imagemagick](https://tecadmin.net/install-imagemagick-on-linux/) is installed before using this.
+   - reference: [StackExchange](https://unix.stackexchange.com/questions/35333/what-is-the-fastest-way-to-view-images-from-the-terminal)
+5. **`nc -l -p 9000`: Listen on port 9000**
+   - use `nc <ip_address> 9000` to send to communicate with the host.
+6. **`grep -rnw '/path/to/somewhere/' -e 'pattern'`: Find all files containing the pattern under the specified path**
+   - `-r`: recursively search
+   - `-n`: display the line number containing the pattern in the file.
+   - `-w`: match the entire word of the pattern.
+   - reference: [StackOverflow](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux)
 
 ## :sun_with_face: Special Thanks
 
