@@ -22,12 +22,12 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 ## :sun_with_face: Common Commands
 
-1. `lsof -i -P -n | grep LISTEN`: Show listening ports.
+1. **`lsof -i -P -n | grep LISTEN`: Show listening ports.**
    - lsof: list open files and processes that opened them.
    - `-i`: list all network connections.
    - `-P`: list port number instead of port name.
    - `-n`: don't convert network number to hostname, this can make lsof run faster.
-   - [reference manual](https://man7.org/linux/man-pages/man8/lsof.8.html)
+   - reference: [manual](https://man7.org/linux/man-pages/man8/lsof.8.html)
 2.
 
 ## :sun_with_face: Special Thanks
