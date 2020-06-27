@@ -1,4 +1,4 @@
-# Awesome-Security-Tool-List
+# :sun_with_face: Awesome Security Tool List :four_leaf_clover:
 
 This is a list of security tools that I have used or recommend. Welcome any contributions!
 
@@ -9,3 +9,4 @@ This is a list of security tools that I have used or recommend. Welcome any cont
    - `-M`: recursively scan extracted files.
    - `-r`: delete carved file after extraction. ([what is file carving?](https://resources.infosecinstitute.com/file-carving/#gref))
    - `-e`: extract known file types.
+2.
