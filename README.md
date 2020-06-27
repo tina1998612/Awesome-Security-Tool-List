@@ -1,6 +1,6 @@
 # :sun_with_face: Awesome Security Tool List :four_leaf_clover:
 
-This is a list of security tools that I have used or recommend. Welcome any contributions! :muscle:
+This is a list of security tools that I have used or recommend. I'm using Kali Linux. Welcome any contributions! :muscle:
 
 & Wish you all good luck on your way of finding the hidden treasures. :wink:
 
@@ -11,7 +11,13 @@ This is a list of security tools that I have used or recommend. Welcome any cont
    - `-M`: recursively scan extracted files.
    - `-r`: delete carved file after extraction. ([what is file carving?](https://resources.infosecinstitute.com/file-carving/#gref))
    - `-e`: extract known file types.
-2.
+2. [qemu-mipsel](https://www.qemu.org/docs/master/system/target-mips.html): Execute MIPS programs on non-MIPS OS.
+
+   - **Example: `qemu-mipsel <filename>`**
+   - QEMU: Quick EMUlator
+   - mipsel: little-endian MIPS / mips: big-endian MIPS ([little vs big endian?](https://chortle.ccsu.edu/AssemblyTutorial/Chapter-15/ass15_3.html))
+
+3.
 
 ## :sun_with_face: Special Thanks
 
