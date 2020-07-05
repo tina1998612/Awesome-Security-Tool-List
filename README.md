@@ -27,7 +27,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 4. [StegSolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install): A java app that solves steganography by apply various filters.
    - Installation instruction is in the above link.
 5. [Burp Suite Professional](https://portswigger.net/burp/pro): A software that can use proxy (usually localhost:8080) to intercept HTTP requests. You can edit and resend the requests.
-   - The Community version is very slow.. don't use it. You should be able to find free professional licenses online. :)
+   - The Community version is very slow.. don't use it. You should be able to find free professional licenses online:)
 6. [IDA Pro 32/64 bit](https://www.hex-rays.com/products/ida/support/download_freeware/):
    - Download IDA Pro 64-bit from the above link, and download IDA Pro 32-bit with pseudocode decompiler [here](https://drive.google.com/open?id=1CCRnlhXZCUwH1P5WisLf6CQtHv6dTtFZ).
    - Hotkeys:
@@ -73,12 +73,11 @@ This is a list of security tools & commands that I have used or recommend. I'm u
    - The `less` command is for viewing the contents of the file, allow both forward and backward navigation. (The `more` command only allow forward navigation.)
    - When using `less` to view the file, you can use `/<anything_you_want_to_search>` to search for specific strings. For example, use `/main` to locate the main function.
    - Reference: [manual](https://sourceware.org/binutils/docs/binutils/objdump.html)
-10.
 
 ## :sun_with_face: Learning / Practicing Websites
 
-1. [PortSwigger](https://portswigger.net/web-security/all-labs): Its web security lab covers topics across SQL injection, Cross-site scripting, Cross-site request forgery (CSRF), Cross-origin resource sharing (CORS), Server-side request forgery (SSRF), etc.
-2. [OWASP Juice Shop](https://owasp.org/www-project-juice-shop/): An insecure web application for you to attack! ([reference solutions](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/appendix/solutions.html))
+1. **[PortSwigger](https://portswigger.net/web-security/all-labs)**: Its web security lab covers topics across SQL injection, Cross-site scripting, Cross-site request forgery (CSRF), Cross-origin resource sharing (CORS), Server-side request forgery (SSRF), etc.
+2. **[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)**: An insecure web application for you to attack! ([reference solutions](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/appendix/solutions.html))
 
 ## :sun_with_face: Special Thanks
 
