@@ -4,11 +4,12 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 & Wish you all good luck on your way of finding the hidden treasures. :wink:
 
-## Table of Contents 
-- [Software Tools](#software-tools)
-- [Common Commands & CLI](#common-commands-&-cli)
-- [Learning / Practicing Websites]()
-- [Special Thanks]()
+## Table of Contents
+
+- [Software Tools](#sun_with_face-software-tools)
+- [Common Commands & CLI](#sun_with_face-common-commands--cli)
+- [Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)
+- [Special Thanks](#sun_with_face-special-thanks)
 
 ## :sun_with_face: Software Tools
 
