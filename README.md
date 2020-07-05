@@ -65,6 +65,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 9. **`objdump -M intel -d <filename> | less`: Show the disassembled file.**
    - `-M intel`: display the assembly in Intel syntax (see the differences between the default AT&T syntax and the Intel syntax in [wiki](https://en.wikipedia.org/wiki/X86_assembly_language#Syntax)).
    - `-d`: disassemble
+   - `-C`: decode (demangle) low-level symbol names into readable names
    - The `less` command is for viewing the contents of the file, allow both forward and backward navigation. (The `more` command only allow forward navigation.)
    - When using `less` to view the file, you can use `/<anything_you_want_to_search>` to search for specific strings. For example, use `/main` to locate the main function.
    - Reference: [manual](https://sourceware.org/binutils/docs/binutils/objdump.html)
@@ -85,8 +86,24 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - mipsel: little-endian MIPS / mips: big-endian MIPS ([little vs big endian?](https://chortle.ccsu.edu/AssemblyTutorial/Chapter-15/ass15_3.html))
     - Reference: [Official Website](https://www.qemu.org/docs/master/system/target-mips.html)
 
-12. **`gdb <executable_filename>`**:
+12. **`gdb ./<executable_program>`: The GNU Project Debugger.**
     - Install: `sudo apt-get update` then `sudo apt-get install gdb`.
+    - Common commands in the gdb console:
+      - `r`: run the program until next breakpoint or error
+      - `f`: run the program until current function is finished
+      - `s`: step to the next line of the program
+        `n`: step to the next line of the program, but does not step into functions
+      - `b main`: set breakpoint at the main function
+      - `d`: delete all breakpoints
+      - `jump *main+135`: jump to the address of the main function address with offset 135
+      - `p/x $rax`: print the rax register in hex
+      - `p/d <variable>`: print the variable as signed integer
+      - `x/wx $esp`: print the memory address of the register esp in hex format
+      - `set $esi = 0x1`: set value of the register
+      - `q`: quit gdb
+    - Tips: Keep an eye on the `cmp` (compare) statement when looking at the assembly code, cause usually if you can pass the compare statement, you can guess the correct input of the program.
+      - To bypass `cmp` statements, you can either modify the register value to the desired one or jump to the next memory address right after the `cmp` statement.
+    - Reference: [Official Website](https://www.gnu.org/software/gdb/)
 
 ## :sun_with_face: Learning / Practicing Websites
 
