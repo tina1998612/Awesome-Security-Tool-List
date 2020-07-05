@@ -4,31 +4,25 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 & Wish you all good luck on your way of finding the hidden treasures. :wink:
 
-## :sun_with_face: Tools
+## Table of Contents 
+- [Software Tools](#software-tools)
+- [Common Commands & CLI](#common-commands-&-cli)
+- [Learning / Practicing Websites]()
+- [Special Thanks]()
 
-1. [Binwalk](https://github.com/ReFirmLabs/binwalk): Firmware analysis & reverse engineering.
-   - **Example: `binwalk -Mre <filename>`**
-   - `-M`: recursively scan extracted files.
-   - `-r`: delete carved file after extraction. ([what is file carving?](https://resources.infosecinstitute.com/file-carving/#gref))
-   - `-e`: extract known file types.
-2. [qemu-mipsel](https://www.qemu.org/docs/master/system/target-mips.html): Execute MIPS programs on non-MIPS OS.
+## :sun_with_face: Software Tools
 
-   - **Example: `qemu-mipsel <filename>`**
-   - If you run into "No such file or directory", run `export QEMU_LD_PREFIX=<folder_location_of_the_missing_file>` and retry the above command to help the program find your file.
-   - QEMU: Quick EMUlator
-   - mipsel: little-endian MIPS / mips: big-endian MIPS ([little vs big endian?](https://chortle.ccsu.edu/AssemblyTutorial/Chapter-15/ass15_3.html))
-
-3. [Ghidra](https://ghidra-sre.org/): Decompile binary files.
+1. [Ghidra](https://ghidra-sre.org/): Decompile binary files.
    - Satisfy the [minimum requirements](https://ghidra-sre.org/InstallationGuide.html#Requirements) (Java 11 JDK) and download Ghidra from the above website.
    - After extracting the downloaded Ghidra package, open `ghidraRun.bat` to start.
    - Select New project > Import Files, then select your binary file to analyze.
    - In the `Symbol Tree` tab on the left, find and select `main` under `Functions`.
    - Then, select `Windows` > `Decompile:main` from the top menu to see readable code.
-4. [StegSolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install): A java app that solves steganography by apply various filters.
+2. [StegSolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install): A java app that solves steganography by apply various filters.
    - Installation instruction is in the above link.
-5. [Burp Suite Professional](https://portswigger.net/burp/pro): A software that can use proxy (usually localhost:8080) to intercept HTTP requests. You can edit and resend the requests.
+3. [Burp Suite Professional](https://portswigger.net/burp/pro): A software that can use proxy (usually localhost:8080) to intercept HTTP requests. You can edit and resend the requests.
    - The Community version is very slow.. don't use it. You should be able to find free professional licenses online:)
-6. [IDA Pro 32/64 bit](https://www.hex-rays.com/products/ida/support/download_freeware/):
+4. [IDA Pro 32/64 bit](https://www.hex-rays.com/products/ida/support/download_freeware/):
    - Download IDA Pro 64-bit from the above link, and download IDA Pro 32-bit with pseudocode decompiler [here](https://drive.google.com/open?id=1CCRnlhXZCUwH1P5WisLf6CQtHv6dTtFZ).
    - Hotkeys:
      - `F5`: view pseudocode
@@ -37,7 +31,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
    - Note that 32-bit programs need to be opened with IDA Pro 32-bit, and vice versa.
    - Reference: [IDA Pro Hotkey Cheatsheet](https://www.hex-rays.com/products/ida/support/freefiles/IDA_Pro_Shortcuts.pdf)
 
-## :sun_with_face: Common Commands
+## :sun_with_face: Common Commands & CLI
 
 1. **`lsof -i -P -n | grep LISTEN`: Show listening ports.**
    - lsof: list open files and processes that opened them.
@@ -73,6 +67,25 @@ This is a list of security tools & commands that I have used or recommend. I'm u
    - The `less` command is for viewing the contents of the file, allow both forward and backward navigation. (The `more` command only allow forward navigation.)
    - When using `less` to view the file, you can use `/<anything_you_want_to_search>` to search for specific strings. For example, use `/main` to locate the main function.
    - Reference: [manual](https://sourceware.org/binutils/docs/binutils/objdump.html)
+10. **`binwalk -Mre <filename>`: Firmware analysis & reverse engineering.**
+
+    - Follow the installation instructions [here](https://github.com/ReFirmLabs/binwalk/blob/master/INSTALL.md).
+
+    - `-M`: recursively scan extracted files.
+    - `-r`: delete carved file after extraction. ([what is file carving?](https://resources.infosecinstitute.com/file-carving/#gref))
+    - `-e`: extract known file types.
+    - Reference: [Github](https://github.com/ReFirmLabs/binwalk)
+
+11. **`qemu-mipsel <filename>`: Execute MIPS programs on non-MIPS OS.**
+
+    - [Installation instructions](https://zoomadmin.com/HowToInstall/UbuntuPackage/qemu-system-mips)
+    - If you run into "No such file or directory", run `export QEMU_LD_PREFIX=<folder_location_of_the_missing_file>` and retry the above command to help the program find your file.
+    - QEMU: Quick EMUlator
+    - mipsel: little-endian MIPS / mips: big-endian MIPS ([little vs big endian?](https://chortle.ccsu.edu/AssemblyTutorial/Chapter-15/ass15_3.html))
+    - Reference: [Official Website](https://www.qemu.org/docs/master/system/target-mips.html)
+
+12. **`gdb <executable_filename>`**:
+    - Install: `sudo apt-get update` then `sudo apt-get install gdb`.
 
 ## :sun_with_face: Learning / Practicing Websites
 
