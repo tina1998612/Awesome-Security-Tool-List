@@ -67,6 +67,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
    - `-d`: disassemble
    - `-C`: decode (demangle) low-level symbol names into readable names
    - The `less` command is for viewing the contents of the file, allow both forward and backward navigation. (The `more` command only allow forward navigation.)
+   - Can also use `grep` to get specific data.
    - When using `less` to view the file, you can use `/<anything_you_want_to_search>` to search for specific strings. For example, use `/main` to locate the main function.
    - Reference: [manual](https://sourceware.org/binutils/docs/binutils/objdump.html)
 10. **`binwalk -Mre <filename>`: Firmware analysis & reverse engineering.**
@@ -90,6 +91,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - Install: `sudo apt-get update` then `sudo apt-get install gdb`.
     - Common commands in the gdb console:
       - `r`: run the program until next breakpoint or error
+      - `c`: continue running the program
       - `f`: run the program until current function is finished
       - `s`: step to the next line of the program
         `n`: step to the next line of the program, but does not step into functions
@@ -104,6 +106,18 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - Tips: Keep an eye on the `cmp` (compare) statement when looking at the assembly code, cause usually if you can pass the compare statement, you can guess the correct input of the program.
       - To bypass `cmp` statements, you can either modify the register value to the desired one or jump to the next memory address right after the `cmp` statement.
     - Reference: [Official Website](https://www.gnu.org/software/gdb/)
+13. **`nc <ip> <port>`: Connect to remote server**
+    - nc stands for [Netcat](https://en.wikipedia.org/wiki/Netcat)
+    - Use `ncat -vc $binary -kl $ip $port` to host the binary file on a remote server.
+14. **`checksec ./<executable_binary>`: Check the security properties of a program**
+
+    - Properties checked:
+      - `Arch`: The architecture of the program. For example, `amd64-64-little` means AMD64 architecture that uses little endian.
+      - `RELRO` ([Relocation Read-Only](https://ctf101.org/binary-exploitation/relocation-read-only/)): Is partial or full binary sections read-only? If full, "GOT([Global Offset Table](https://en.wikipedia.org/wiki/Global_Offset_Table)) overwrite" attack is not possible.
+      - `STACK`: Does stack canary exist? It is a technique to detect stack overflow by placing a number (named canary) before the stack return pointer, and check if the value has been changed. Reference: [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/pwn/linux/mitigation/canary/)
+      - `NX` (No-Execute): Is NX protection enabled? If yes, we cannot use stack overflow to execute our customized shellcodes.
+      - `PIE` ([Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)): It prevents attackers from exploiting the program by randomizing the memory address of the executable. If enabled, we won't know the memory address until we run the program. However, we can still disable ASLR ([Address Space Layout Randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization)) on our OS to let the addresses remain the same. ([how to disable ASLR on Linux](https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization))
+    - Reference: [Github](https://github.com/slimm609/checksec.sh)
 
 ## :sun_with_face: Learning / Practicing Websites
 
