@@ -134,7 +134,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
         - If yes, we cannot use stack overflow to execute our customized shellcodes.
       - **`PIE`: Prevents attackers by randomizing the memory address of the executable.**
         - PIE: [Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)
-        - If enabled, we won't know the memory address until we run the program. However, we can still disable ASLR ([Address Space Layout Randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization)) on our OS to let the addresses remain the same.
+        - If enabled, we won't know the memory address until we run the program. Solution: Disable ASLR ([Address Space Layout Randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization)) on our OS to let the addresses remain the same.
         - How to disable ASLR on Linux: [StackOverflow](https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization)
     - Reference: [Github](https://github.com/slimm609/checksec.sh)
 
@@ -150,13 +150,13 @@ This is a list of security tools & commands that I have used or recommend. I'm u
       - `VV`: switch from console to visual mode (assembly code & graph)
       - `: some_command`: enter commands in visual mode
       - `q`: return to the previous mode / quit
-16. **`gcc test.c -fno-stack-protector -o test`: Compile C code to executable binary with disabled canary protection**
+16. **`gcc test.c -fno-stack-protector -o test`: Compile C code to executable with disabled canary protection**
     - By disabling canary protection, the program is subjected to BOF ([Buffer Overflow](https://en.wikipedia.org/wiki/Buffer_overflow)) attack.
     - Usually, if you see `Segmentation fault` after a very long input, it has BOF vulnerability.
 
 ## :sun_with_face: Useful Python Scripts
 
-1. [Pwn](https://en.wikipedia.org/wiki/Pwn): compromising a program by gaining ownership of it.
+1. **[Pwn](https://en.wikipedia.org/wiki/Pwn): compromising a program by gaining ownership of it.**
 
 - Follow installation steps on [Pwntools Github](https://github.com/Gallopsled/pwntools#installation)
 - In most cases, the flag can be found in the interactive console by `ls` and then `cat flag.txt`.
