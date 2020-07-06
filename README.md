@@ -10,6 +10,8 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 :gem: **[Common Commands & CLI](#sun_with_face-common-commands--cli)**
 
+:gem: **[Useful Python Scripts](#sun_with_face-useful-python-scripts)**
+
 :gem: **[Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)**
 
 :gem: **[Special Thanks](#sun_with_face-special-thanks)**
@@ -108,6 +110,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
       - `p/d <variable>`: print the variable as signed integer
       - `x/wx $esp`: print the memory address of the register esp in hex format
       - `set $esi = 0x1`: set value of the register
+      - `vmmap`: print out the memory address mapping to libraries and also the rwx (read, write, execute) permissions.
       - `q`: quit gdb
     - Tips: Keep an eye on the `cmp` (compare) statement when looking at the assembly code, cause usually if you can pass the compare statement, you can guess the correct input of the program.
       - To bypass `cmp` statements, you can either modify the register value to the desired one or jump to the next memory address right after the `cmp` statement.
@@ -127,13 +130,64 @@ This is a list of security tools & commands that I have used or recommend. I'm u
         - It is a technique to detect stack overflow by placing a number (named canary) before the stack return pointer, and check if the value has been changed.
         - Reference: [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/pwn/linux/mitigation/canary/)
       - **`NX`: Is NX protection enabled?**
-        - NX: [No-Execute](https://ctf101.org/binary-exploitation/no-execute/)
+        - NX: [No eXecute](https://ctf101.org/binary-exploitation/no-execute/)
         - If yes, we cannot use stack overflow to execute our customized shellcodes.
       - **`PIE`: Prevents attackers by randomizing the memory address of the executable.**
         - PIE: [Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)
         - If enabled, we won't know the memory address until we run the program. However, we can still disable ASLR ([Address Space Layout Randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization)) on our OS to let the addresses remain the same.
         - How to disable ASLR on Linux: [StackOverflow](https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization)
     - Reference: [Github](https://github.com/slimm609/checksec.sh)
+
+15. **`r2 ./<executable_binary>`: For reverse engineering and binary analysis.**
+    - r2 is short for [Radare2](https://github.com/radareorg/radare2)
+    - Install & usage tutorial: [frozenkp's Blog](https://frozenkp.github.io/reverse/radare2/)
+    - Common commands in the r2 console:
+      - `aa`: analyze all, usually we type this every time at start
+      - `afl`: list all functions (analyze function list)
+      - `s main`: move to main function
+      - `s <memory_address>`: move to memory address
+      - `V`: switch from console to hex view
+      - `VV`: switch from console to visual mode (assembly code & graph)
+      - `: some_command`: enter commands in visual mode
+      - `q`: return to the previous mode / quit
+16. **`gcc test.c -fno-stack-protector -o test`: Compile C code to executable binary with disabled canary protection**
+    - By disabling canary protection, the program is subjected to BOF ([Buffer Overflow](https://en.wikipedia.org/wiki/Buffer_overflow)) attack.
+    - Usually, if you see `Segmentation fault` after a very long input, it has BOF vulnerability.
+
+## :sun_with_face: Useful Python Scripts
+
+1. [Pwn](https://en.wikipedia.org/wiki/Pwn): compromising a program by gaining ownership of it.
+
+- Follow installation steps on [Pwntools Github](https://github.com/Gallopsled/pwntools#installation)
+- In most cases, the flag can be found in the interactive console by `ls` and then `cat flag.txt`.
+
+```python
+from pwn import *
+
+# remember to change the values here
+HOST = "<ip.address>"
+PORT = <port_number>
+
+# connect to the remote server and define our value to send
+r = remote(HOST, PORT)
+# For reading local binaries:
+# r = process('./<executable_binary>')
+
+something_to_send = 0xfaceb00c
+
+# Usually there is a newline before the user input, so receive until '\n'
+r.recvuntil('\n')
+
+# stop and listen to user input in the console, press enter to continue
+raw_input()
+
+r.sendline(p32(something_to_send))
+# use r.send() to send without a new line
+# use p32 to encode the hex value as 32-bit char and p64 for 64-bit char
+
+# enter the interactive console
+r.interactive()
+```
 
 ## :sun_with_face: Learning / Practicing Websites
 
