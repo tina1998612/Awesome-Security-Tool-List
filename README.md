@@ -6,24 +6,27 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 ## Table of Contents
 
-- [Software Tools](#sun_with_face-software-tools)
-- [Common Commands & CLI](#sun_with_face-common-commands--cli)
-- [Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)
-- [Special Thanks](#sun_with_face-special-thanks)
+- :gem: [Software Tools](#sun_with_face-software-tools)
+- :gem: [Common Commands & CLI](#sun_with_face-common-commands--cli)
+- :gem: [Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)
+- :gem: [Special Thanks](#sun_with_face-special-thanks)
 
 ## :sun_with_face: Software Tools
 
-1. [Ghidra](https://ghidra-sre.org/): Decompile binary files.
+1. **[Ghidra](https://ghidra-sre.org/): Decompile binary files.**
    - Satisfy the [minimum requirements](https://ghidra-sre.org/InstallationGuide.html#Requirements) (Java 11 JDK) and download Ghidra from the above website.
    - After extracting the downloaded Ghidra package, open `ghidraRun.bat` to start.
    - Select New project > Import Files, then select your binary file to analyze.
    - In the `Symbol Tree` tab on the left, find and select `main` under `Functions`.
    - Then, select `Windows` > `Decompile:main` from the top menu to see readable code.
-2. [StegSolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install): A java app that solves steganography by apply various filters.
+2. **[StegSolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install): A java app that solves steganography by apply various filters.**
+   - Steganography is to conceal a message, image, or file within another message, image, or file.
    - Installation instruction is in the above link.
-3. [Burp Suite Professional](https://portswigger.net/burp/pro): A software that can use proxy (usually localhost:8080) to intercept HTTP requests. You can edit and resend the requests.
+   - Reference: [Wiki](https://en.wikipedia.org/wiki/Steganography)
+3. **[Burp Suite Professional](https://portswigger.net/burp/pro): A software that uses proxy (usually localhost:8080) to intercept HTTP requests.**
+   - You can edit and resend the intercepted HTTP requests.
    - The Community version is very slow.. don't use it. You should be able to find free professional licenses online:)
-4. [IDA Pro 32/64 bit](https://www.hex-rays.com/products/ida/support/download_freeware/):
+4. **[IDA Pro 32/64 bit](https://www.hex-rays.com/products/ida/support/download_freeware/): A software that generates assembly code from binary files.**
    - Download IDA Pro 64-bit from the above link, and download IDA Pro 32-bit with pseudocode decompiler [here](https://drive.google.com/open?id=1CCRnlhXZCUwH1P5WisLf6CQtHv6dTtFZ).
    - Hotkeys:
      - `F5`: view pseudocode
