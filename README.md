@@ -6,13 +6,13 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 ## Table of Contents
 
-:gem: [Software Tools](#sun_with_face-software-tools)
+:gem: **[Software Tools](#sun_with_face-software-tools)**
 
-:gem: [Common Commands & CLI](#sun_with_face-common-commands--cli)
+:gem: **[Common Commands & CLI](#sun_with_face-common-commands--cli)**
 
-:gem: [Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)
+:gem: **[Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)**
 
-:gem: [Special Thanks](#sun_with_face-special-thanks)
+:gem: **[Special Thanks](#sun_with_face-special-thanks)**
 
 ## :sun_with_face: Software Tools
 
