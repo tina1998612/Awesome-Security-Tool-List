@@ -114,14 +114,16 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - Properties checked:
       - **`Arch`: The architecture of the program.**
         - For example, `amd64-64-little` means AMD64 architecture that uses little endian.
-      - **`RELRO` ([Relocation Read-Only](https://ctf101.org/binary-exploitation/relocation-read-only/)): Is partial or full binary sections read-only?**
+      - **`RELRO`: Is partial or full binary sections read-only?**
+        - RELRO: [Relocation Read-Only](https://ctf101.org/binary-exploitation/relocation-read-only/)
         - If full, "GOT([Global Offset Table](https://en.wikipedia.org/wiki/Global_Offset_Table)) overwrite" attack is not possible.
       - **`STACK`: Does stack canary exist?**
         - It is a technique to detect stack overflow by placing a number (named canary) before the stack return pointer, and check if the value has been changed.
         - Reference: [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/pwn/linux/mitigation/canary/)
       - **`NX` (No-Execute): Is NX protection enabled?**
         - If yes, we cannot use stack overflow to execute our customized shellcodes.
-      - **`PIE` ([Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)): Prevents attackers by randomizing the memory address of the executable.**
+      - **`PIE`: Prevents attackers by randomizing the memory address of the executable.**
+        - PIE: [Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)
         - If enabled, we won't know the memory address until we run the program. However, we can still disable ASLR ([Address Space Layout Randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization)) on our OS to let the addresses remain the same.
         - How to disable ASLR on Linux: [StackOverflow](https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization)
     - Reference: [Github](https://github.com/slimm609/checksec.sh)
