@@ -120,7 +120,8 @@ This is a list of security tools & commands that I have used or recommend. I'm u
       - **`STACK`: Does stack canary exist?**
         - It is a technique to detect stack overflow by placing a number (named canary) before the stack return pointer, and check if the value has been changed.
         - Reference: [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/pwn/linux/mitigation/canary/)
-      - **`NX` (No-Execute): Is NX protection enabled?**
+      - **`NX`: Is NX protection enabled?**
+        - NX: [No-Execute](https://ctf101.org/binary-exploitation/no-execute/)
         - If yes, we cannot use stack overflow to execute our customized shellcodes.
       - **`PIE`: Prevents attackers by randomizing the memory address of the executable.**
         - PIE: [Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)
