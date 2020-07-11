@@ -1,4 +1,4 @@
-# :sun_with_face: Awesome Security Tool List & Useful Commands :four_leaf_clover:
+# :sun_with_face: Awesome Security Tool List :four_leaf_clover:
 
 This is a list of security tools & commands that I have used or recommend. I'm using Kali Linux. Welcome any contributions! :muscle:
 
@@ -85,7 +85,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - `-M`: recursively scan extracted files.
     - `-r`: delete carved file after extraction. ([what is file carving?](https://resources.infosecinstitute.com/file-carving/#gref))
     - `-e`: extract known file types.
-    - Reference: [Github](https://github.com/ReFirmLabs/binwalk)
+    - Reference: [GitHub](https://github.com/ReFirmLabs/binwalk)
 
 11. **`qemu-mipsel <filename>`: Execute MIPS programs on non-MIPS OS.**
 
@@ -136,7 +136,7 @@ This is a list of security tools & commands that I have used or recommend. I'm u
         - PIE: [Position Independent Executable](https://en.wikipedia.org/wiki/Position-independent_code#Position-independent_executables)
         - If enabled, we won't know the memory address until we run the program. Solution: Disable ASLR ([Address Space Layout Randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization)) on our OS to let the addresses remain the same.
         - How to disable ASLR on Linux: [StackOverflow](https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization)
-    - Reference: [Github](https://github.com/slimm609/checksec.sh)
+    - Reference: [GitHub](https://github.com/slimm609/checksec.sh)
 
 15. **`r2 ./<executable_binary>`: For reverse engineering and binary analysis.**
     - r2 is short for [Radare2](https://github.com/radareorg/radare2)
@@ -153,13 +153,17 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 16. **`gcc test.c -fno-stack-protector -o test`: Compile C code to executable with disabled canary protection**
     - By disabling canary protection, the program is subjected to BOF ([Buffer Overflow](https://en.wikipedia.org/wiki/Buffer_overflow)) attack.
     - Usually, if you see `Segmentation fault` after a very long input, it has BOF vulnerability.
+17. **`file <filename>`: Prints out the type of the file.**
+    - Useful when you are not sure about the file type. For instance, an image file without a .jpg.
+18.
 
-## :sun_with_face: Useful Python Scripts
+## :sun_with_face: Useful Python Libraries
 
-1. **[Pwn](https://en.wikipedia.org/wiki/Pwn): compromising a program by gaining ownership of it.**
+1. **[Pwn](https://en.wikipedia.org/wiki/Pwn): Compromise a program by gaining ownership of it.**
 
-- Follow installation steps on [Pwntools Github](https://github.com/Gallopsled/pwntools#installation)
+- Follow installation steps on [Pwntools GitHub](https://github.com/Gallopsled/pwntools#installation)
 - In most cases, the flag can be found in the interactive console by `ls` and then `cat flag.txt`.
+- Example:
 
 ```python
 from pwn import *
@@ -187,6 +191,44 @@ r.sendline(p32(something_to_send))
 
 # enter the interactive console
 r.interactive()
+```
+
+2. **[Angr](https://github.com/angr/angr): A collection of binary analysis tools**
+
+- Install via [instructions](https://docs.angr.io/introductory-errata/install) on their documentation.
+- Symbolic Execution example:
+  - Symbolic execution can be used to find the input that can reach our desired program state ([wiki](https://en.wikipedia.org/wiki/Symbolic_execution#:~:text=In%20computer%20science%2C%20symbolic%20execution,of%20a%20program%20to%20execute.)).
+
+```python
+import angr
+import claripy # Angr's constraint solver engine
+
+# replace this with the binary you want to analyze
+# disable auto_load_libs to improve performance
+project = angr.Project("./<binary>", auto_load_libs=False)
+
+# create a symbolic object with 25 bytes
+# BV stands for BitVector (bit array)
+argv1 = claripy.BVS("argv1", 25*8)
+
+# specify the entry point of the program and our input parameter
+initial_state = project.factory.entry_state(args=["./<binary>", argv1])
+
+# generate a simulation manager object for solving our parameter later
+sm = project.factory.simulation_manager(initial_state)
+
+# symbolically execute until we find a state with address = find_addr
+find_addr = 0x400602
+sm.explore(find=find_addr)
+
+# find the state that meets the above condition
+found = sm.found[0]
+
+# return the input value to get to this state and cast it to bytes
+solution = found.solver.eval(argv1, cast_to=bytes)
+
+# repr: returns a printable representation of the input object
+print(repr(solution))
 ```
 
 ## :sun_with_face: Learning / Practicing Websites
