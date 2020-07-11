@@ -231,6 +231,58 @@ solution = found.solver.eval(argv1, cast_to=bytes)
 print(repr(solution))
 ```
 
+3. **[Z3-solver](https://pypi.org/project/z3-solver/): An efficient SMT solver**
+
+- SMT: satisfiability modulo theories ([wiki](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories))
+- [Documentation](https://ericpony.github.io/z3py-tutorial/guide-examples.htm)
+- Example:
+  - Steps
+    1. define the variables
+    2. add constraints
+    3. solve the equations
+
+```python
+from z3 import *
+
+x = Int('x')
+y = Int('y')
+
+solve(x > 2, y < 10, x + 2*y == 7)
+# output: [y = 0, x = 7]
+```
+
+```python
+from z3 import *
+
+p = Bool('p')
+q = Bool('q')
+r = Bool('r')
+
+solve(Implies(p, q), r == Not(q), Or(Not(p), r))
+# output: [q = False, p = False, r = True]
+# Implies: Logical Implication
+```
+
+```python
+from z3 import *
+
+x, y, z = Reals('x y z') # real numbers
+
+# add constraints
+s = Solver()
+s.add(x > 1, y > 1, x + y > 3, z - x < 10)
+
+# check if the constraints can be satisfied (output: sat / unsat)
+print(s.check())
+
+# use model to specify multiple constraints and make each of it true
+m = s.model()
+
+# print the value of x
+print("x = %s" % m[x])
+# output: x = 3/2
+```
+
 ## :sun_with_face: Learning / Practicing Websites
 
 1. **[PortSwigger](https://portswigger.net/web-security/all-labs)**: Its web security lab covers topics across SQL injection, Cross-site scripting, Cross-site request forgery (CSRF), Cross-origin resource sharing (CORS), Server-side request forgery (SSRF), etc.
