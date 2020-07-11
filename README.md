@@ -12,6 +12,8 @@ This is a list of security tools & commands that I have used or recommend. I'm u
 
 :gem: **[Useful Python Scripts](#sun_with_face-useful-python-scripts)**
 
+:gem: **[Online Tools](#sun_with_face-online-tools)**
+
 :gem: **[Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)**
 
 :gem: **[Special Thanks](#sun_with_face-special-thanks)**
@@ -39,6 +41,11 @@ This is a list of security tools & commands that I have used or recommend. I'm u
      - `Shift+F12`: view all strings in the program.
    - Note that 32-bit programs need to be opened with IDA Pro 32-bit, and vice versa.
    - Reference: [IDA Pro Hotkey Cheatsheet](https://www.hex-rays.com/products/ida/support/freefiles/IDA_Pro_Shortcuts.pdf)
+5. **[GIMP](https://www.gimp.org/): The GNU Image Manipulation Platform**
+   - Install version 2.10.4 on Windows [here](https://download.gimp.org/mirror/pub/gimp/v2.10/windows/) (there is a known bug in the latest version by the time of writing)
+   - GNU: A Unix-like operating system a collection of free softwares, so GNU is also dubbed as "GNU's Not Unix!" ([wiki](https://en.wikipedia.org/wiki/GNU))
+   - Can apply various filters to images for solving steganography problems
+   
 
 ## :sun_with_face: Common Commands & CLI
 
@@ -155,7 +162,12 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - Usually, if you see `Segmentation fault` after a very long input, it has BOF vulnerability.
 17. **`file <filename>`: Prints out the type of the file.**
     - Useful when you are not sure about the file type. For instance, an image file without a .jpg.
-18.
+18. **`openssl rsa -pubin -in <path_to_public_key> -text -noout`: Find modulus from a RSA public key**
+    - `-pubin`: read the public key instead of private key (private key is read by default if not specified)
+    - `-in`: specify the input file
+    - `-text`: print the public / private key in plaintext
+    - `-noout`: prevent printing the encoded version of the key
+    - Reference: [OpenSSL GitHub](https://github.com/openssl/openssl), [OpenSSL RSA doc](https://www.openssl.org/docs/man1.0.2/man1/openssl-rsa.html)
 
 ## :sun_with_face: Useful Python Libraries
 
@@ -195,7 +207,7 @@ r.interactive()
 
 2. **[Angr](https://github.com/angr/angr): A collection of binary analysis tools**
 
-- Install via [instructions](https://docs.angr.io/introductory-errata/install) on their documentation.
+- [Install doc](https://docs.angr.io/introductory-errata/install)
 - Symbolic Execution example:
   - Symbolic execution can be used to find the input that can reach our desired program state ([wiki](https://en.wikipedia.org/wiki/Symbolic_execution#:~:text=In%20computer%20science%2C%20symbolic%20execution,of%20a%20program%20to%20execute.)).
 
@@ -233,6 +245,7 @@ print(repr(solution))
 
 3. **[Z3-solver](https://pypi.org/project/z3-solver/): An efficient SMT solver**
 
+- Install via pip install
 - SMT: satisfiability modulo theories ([wiki](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories))
 - [Documentation](https://ericpony.github.io/z3py-tutorial/guide-examples.htm)
 - Example:
@@ -282,6 +295,50 @@ m = s.model()
 print("x = %s" % m[x])
 # output: x = 3/2
 ```
+
+4. **[SymPy](https://docs.sympy.org/latest/index.html): For symbolic mathematics**
+
+- [Install doc](https://docs.sympy.org/latest/install.html)
+- Example:
+
+```python
+import sympy
+
+# inverse function
+def inv(x, m):
+   return sympy.invert(x, m)
+
+print(inv(11, 26))
+# output: 19
+```
+
+5. **[Crypto.Util.number](https://pycryptodome.readthedocs.io/en/latest/src/util/util.html#module-Crypto.Util.number): Contains lots of utilities for numbers**
+
+- Example for solving RSA:
+
+```python
+from Crypto.Util.number import inverse
+
+p =  <some_number>
+q =  <some_number>
+e =  <some_number>
+c =  <some_number>
+n = p*q
+
+phi = (p-1) * (q-1)
+d = inverse(e, phi)
+
+# c^d % n (c to the power of d, modulus n)
+m = pow(c, d, n)
+
+print(m)
+```
+
+## :sun_with_face: Online Tools
+
+1. **[HexDecode](https://www.convertstring.com/EncodeDecode/HexDecode)**: Convert hex to text
+2. **[URLDecoder](https://www.urldecoder.org/)**: URL decode and encode
+3. **[FactorDB](http://www.factordb.com/)**: Factorize any number
 
 ## :sun_with_face: Learning / Practicing Websites
 
