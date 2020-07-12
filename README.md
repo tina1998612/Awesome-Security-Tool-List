@@ -72,7 +72,7 @@ _Author: Lee Ting Ting_
    - `-w`: match the entire word of the pattern.
    - Reference: [StackOverflow](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux)
 7. **`strings <filename>`: Print all strings in the file.**
-   - use `strings <filename> | grep -E <some_regex>` to find the strings that matches the regular expression, `FLAG{[a-zA-Z0-9_!@]+}`, for example.
+   - use `strings <filename> | grep -E <some_regex>` to find the strings that match the regular expression, `FLAG{[a-zA-Z0-9_!@]+}`, for example.
    - Test regular expressions online at https://regexr.com/.
 8. **`strace <filename>`: Print out system call details.**
    - If not installed, run `sudo apt-get install strace`.
