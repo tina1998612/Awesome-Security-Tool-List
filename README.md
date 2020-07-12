@@ -45,7 +45,6 @@ This is a list of security tools & commands that I have used or recommend. I'm u
    - Install version 2.10.4 on Windows [here](https://download.gimp.org/mirror/pub/gimp/v2.10/windows/) (there is a known bug in the latest version by the time of writing)
    - GNU: A Unix-like operating system a collection of free softwares, so GNU is also dubbed as "GNU's Not Unix!" ([wiki](https://en.wikipedia.org/wiki/GNU))
    - Can apply various filters to images for solving steganography problems
-   
 
 ## :sun_with_face: Common Commands & CLI
 
@@ -168,6 +167,10 @@ This is a list of security tools & commands that I have used or recommend. I'm u
     - `-text`: print the public / private key in plaintext
     - `-noout`: prevent printing the encoded version of the key
     - Reference: [OpenSSL GitHub](https://github.com/openssl/openssl), [OpenSSL RSA doc](https://www.openssl.org/docs/man1.0.2/man1/openssl-rsa.html)
+19. **`nmap <ip_address>`: Scan ports of an IP address**
+    - You can see the protocol used of each port, whether the port is open or close, and the service of each port.
+    - `nmap -sU <ip_address> -p68`: UDP scan for port 68
+    - Reference: [official website](https://nmap.org/), [nmap options doc](https://nmap.org/book/man-briefoptions.html)
 
 ## :sun_with_face: Useful Python Libraries
 
