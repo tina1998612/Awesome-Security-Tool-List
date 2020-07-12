@@ -1,6 +1,6 @@
 # :sun_with_face: Awesome Security Tool List :four_leaf_clover:
 
-This is a list of security tools & commands that I have used or recommend. I'm using Kali Linux. Welcome any contributions! :muscle:
+This is a list of security tools & commands that I have used or recommend. I'm using Kali Linux VM with a Windows host computer. Welcome any contributions! :muscle:
 
 & Wish you all good luck on your way of finding the hidden treasures. :wink:
 
