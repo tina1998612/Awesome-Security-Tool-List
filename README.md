@@ -45,7 +45,7 @@ _Author: Lee Ting Ting_
    - Reference: [IDA Pro Hotkey Cheatsheet](https://www.hex-rays.com/products/ida/support/freefiles/IDA_Pro_Shortcuts.pdf)
 5. **[GIMP](https://www.gimp.org/): The GNU Image Manipulation Platform**
    - Install version 2.10.4 on Windows [here](https://download.gimp.org/mirror/pub/gimp/v2.10/windows/) (there is a known bug in the latest version by the time of writing)
-   - GNU: A Unix-like operating system a collection of free softwares, so GNU is also dubbed as "GNU's Not Unix!" ([wiki](https://en.wikipedia.org/wiki/GNU))
+   - GNU: A Unix-like operating system and a collection of free softwares. GNU means "GNU's Not Unix!" ([wiki](https://en.wikipedia.org/wiki/GNU))
    - Can apply various filters to images for solving steganography problems
 
 ## :sun_with_face: Common Commands & CLI
@@ -57,7 +57,7 @@ _Author: Lee Ting Ting_
    - `-n`: don't convert network number to hostname, this can make lsof run faster.
    - reference: [manual](https://man7.org/linux/man-pages/man8/lsof.8.html)
 2. **`xdg-open .`: Open current folder in GUI explorer.**
-   - This is useful for drag and drop files from Linux VM to host computer.
+   - This is useful for dragging and dropping files from Linux VM to host computer.
    - reference: [StackExchange](https://askubuntu.com/questions/31069/how-to-open-a-file-manager-of-the-current-directory-in-the-terminal)
 3. **`kill $(lsof -t -i:8080)`: Kill any process listening on port 8080.**
    - reference: [StackOverflow](https://stackoverflow.com/questions/11583562/how-to-kill-a-process-running-on-particular-port-in-linux)
@@ -120,7 +120,7 @@ _Author: Lee Ting Ting_
       - `set $esi = 0x1`: set value of the register
       - `vmmap`: print out the memory address mapping to libraries and also the rwx (read, write, execute) permissions.
       - `q`: quit gdb
-    - Tips: Keep an eye on the `cmp` (compare) statement when looking at the assembly code, cause usually if you can pass the compare statement, you can guess the correct input of the program.
+    - Tips: Keep an eye on the `cmp` (compare) statement when looking at the assembly code because usually if you can pass the compare statement, you can guess the correct input of the program.
       - To bypass `cmp` statements, you can either modify the register value to the desired one or jump to the next memory address right after the `cmp` statement.
     - Reference: [Official Website](https://www.gnu.org/software/gdb/)
 13. **`nc <ip> <port>`: Connect to remote server**
@@ -293,7 +293,7 @@ s.add(x > 1, y > 1, x + y > 3, z - x < 10)
 # check if the constraints can be satisfied (output: sat / unsat)
 print(s.check())
 
-# use model to specify multiple constraints and make each of it true
+# use model to specify multiple constraints and make each of them true
 m = s.model()
 
 # print the value of x
