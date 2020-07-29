@@ -178,7 +178,15 @@ _Author: Lee Ting Ting_
 
 ## :sun_with_face: Useful Python Libraries
 
-1. **[Pwn](https://en.wikipedia.org/wiki/Pwn): Compromise a program by gaining ownership of it.**
+1. **[dirsearch](https://github.com/maurosoria/dirsearch): A CLI to brute force directories and files in websites.**
+
+```
+git clone https://github.com/maurosoria/dirsearch.git
+cd dirsearch
+python3 dirsearch.py -u <URL> -e <EXTENSION>
+```
+
+2. **[Pwn](https://en.wikipedia.org/wiki/Pwn): Compromise a program by gaining ownership of it.**
 
 - Follow installation steps on [Pwntools GitHub](https://github.com/Gallopsled/pwntools#installation)
 - In most cases, the flag can be found in the interactive console by `ls` and then `cat flag.txt`.
@@ -212,7 +220,7 @@ r.sendline(p32(something_to_send))
 r.interactive()
 ```
 
-2. **[Angr](https://github.com/angr/angr): A collection of binary analysis tools**
+3. **[Angr](https://github.com/angr/angr): A collection of binary analysis tools**
 
 - [Install doc](https://docs.angr.io/introductory-errata/install)
 - Symbolic Execution example:
@@ -250,7 +258,7 @@ solution = found.solver.eval(argv1, cast_to=bytes)
 print(repr(solution))
 ```
 
-3. **[Z3-solver](https://pypi.org/project/z3-solver/): An efficient SMT solver**
+4. **[Z3-solver](https://pypi.org/project/z3-solver/): An efficient SMT solver**
 
 - Install via pip install
 - SMT: satisfiability modulo theories ([wiki](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories))
@@ -303,7 +311,7 @@ print("x = %s" % m[x])
 # output: x = 3/2
 ```
 
-4. **[SymPy](https://docs.sympy.org/latest/index.html): For symbolic mathematics**
+5. **[SymPy](https://docs.sympy.org/latest/index.html): For symbolic mathematics**
 
 - [Install doc](https://docs.sympy.org/latest/install.html)
 - Example:
@@ -319,7 +327,7 @@ print(inv(11, 26))
 # output: 19
 ```
 
-5. **[Crypto.Util.number](https://pycryptodome.readthedocs.io/en/latest/src/util/util.html#module-Crypto.Util.number): Contains lots of utilities for numbers**
+6. **[Crypto.Util.number](https://pycryptodome.readthedocs.io/en/latest/src/util/util.html#module-Crypto.Util.number): Contains lots of utilities for numbers**
 
 - Example for solving RSA:
 
