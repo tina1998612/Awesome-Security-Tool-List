@@ -18,6 +18,8 @@ _Author: Lee Ting Ting_
 
 :gem: **[Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)**
 
+:gem: **[Curated GitHub Repos](#sun_with_face-curated-github-repos)**
+
 :gem: **[Special Thanks](#sun_with_face-special-thanks)**
 
 ## :sun_with_face: Software Tools
@@ -351,6 +353,11 @@ print(m)
 1. **[PortSwigger](https://portswigger.net/web-security/all-labs)**: Its web security lab covers topics across SQL injection, Cross-site scripting, Cross-site request forgery (CSRF), Cross-origin resource sharing (CORS), Server-side request forgery (SSRF), etc.
 2. **[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)**: An insecure web application for you to attack! ([reference solutions](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/appendix/solutions.html))
 3. **[MITRE ATT&CK Matrix](https://attack.mitre.org/)**: A list of attack techniques based on real world observations.
+
+## :sun_with_face: Curated GitHub Repos
+
+1. **[XS-Leaks](https://github.com/xsleaks/xsleaks)**: XS-leak example code, past exploits explanation, link to xs-leak wiki and related materials.
+2.
 
 ## :sun_with_face: Special Thanks
 
