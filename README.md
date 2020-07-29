@@ -357,7 +357,6 @@ print(m)
 ## :sun_with_face: Curated GitHub Repos
 
 1. **[XS-Leaks](https://github.com/xsleaks/xsleaks)**: XS-leak example code, past exploits explanation, link to xs-leak wiki and related materials.
-2.
 
 ## :sun_with_face: Special Thanks
 
