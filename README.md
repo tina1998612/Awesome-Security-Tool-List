@@ -344,11 +344,13 @@ print(m)
 1. **[HexDecode](https://www.convertstring.com/EncodeDecode/HexDecode)**: Convert hex to text
 2. **[URLDecoder](https://www.urldecoder.org/)**: URL decode and encode
 3. **[FactorDB](http://www.factordb.com/)**: Factorize any number
+4. **[XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)**: Copy-and-paste cross-site scripting cheat sheet
 
 ## :sun_with_face: Learning / Practicing Websites
 
 1. **[PortSwigger](https://portswigger.net/web-security/all-labs)**: Its web security lab covers topics across SQL injection, Cross-site scripting, Cross-site request forgery (CSRF), Cross-origin resource sharing (CORS), Server-side request forgery (SSRF), etc.
 2. **[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)**: An insecure web application for you to attack! ([reference solutions](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/appendix/solutions.html))
+3. **[MITRE ATT&CK Matrix](https://attack.mitre.org/)**: A list of attack techniques based on real world observations.
 
 ## :sun_with_face: Special Thanks
 
