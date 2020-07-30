@@ -20,7 +20,7 @@ _Author: Lee Ting Ting_
 
 :gem: **[Curated GitHub Repos / Toolkits](#sun_with_face-curated-github-repos--toolkits)**
 
-:gem: **[Common Security Acronyms](#sun_with_face-common-security-acronym)**
+:gem: **[Common Security Acronyms](#sun_with_face-common-security-acronyms)**
 
 :gem: **[Special Thanks](#sun_with_face-special-thanks)**
 
