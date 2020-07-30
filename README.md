@@ -408,5 +408,5 @@ print(m)
 
 ## :sun_with_face: Special Thanks
 
-- Learned a lot from the course "EE5188 Practicum of Attacking and Defense of Network Security" at [National Taiwan University](https://www.ntu.edu.tw/english/).
+- Learned a lot from the course "EE5188 Practicum of Attacking and Defense of Network Security" at [National Taiwan University](https://www.ntu.edu.tw/english/) & [AIS3](https://ais3.org/).
 - Cute emojis from [here](https://gist.github.com/rxaviers/7360908)! :blush:
