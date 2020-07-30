@@ -18,7 +18,9 @@ _Author: Lee Ting Ting_
 
 :gem: **[Learning / Practicing Websites](#sun_with_face-learning--practicing-websites)**
 
-:gem: **[Curated GitHub Repos](#sun_with_face-curated-github-repos)**
+:gem: **[Curated GitHub Repos / Toolkits](#sun_with_face-curated-github-repos--toolkits)**
+
+:gem: **[Common Security Acronyms](#sun_with_face-common-security-acronym)**
 
 :gem: **[Special Thanks](#sun_with_face-special-thanks)**
 
@@ -175,6 +177,22 @@ _Author: Lee Ting Ting_
     - You can see the protocol used of each port, whether the port is open or close, and the service of each port.
     - `nmap -sU <ip_address> -p68`: UDP scan for port 68
     - Reference: [official website](https://nmap.org/), [nmap options doc](https://nmap.org/book/man-briefoptions.html)
+20. **`theHarvester -d ntu.edu.tw -l 50 -b google`: Use open source intelligence (OSINT) to collect information of a specific domain**
+    - `-d`: domain to search
+    - `-l`: limit the search result to this number
+    - `-b`: data source (google, bing, linkedin, twitter, yahoo, etc)
+    - [GitHub](https://github.com/laramies/theHarvester)
+    - Already installed in Kali Linux
+21. **`wget -O 'name_of_file' <download_url>`: Download files with customized names**
+    - `wget -r <website_url>`: Download the entire source code of the website
+22. **`unzip -P <pwd> <filename>`: Unzip zip files with password**
+23. **`arp -a`: Show all IP addresses connected to the same network**
+24. **`net user /domain`: Show all usernames in the current domain**
+    - `net groups /domain`: show all groups under current domain
+    - `net groups "<name_to_search>" /domain`: search for specific group name, for example: `net groups "Domain Admins" /domain`
+25. **`nslookup <domain_name>`: See IP address of the domain**
+26. **`whoami`: Find out which user you are currently logged in**
+    - `whoami /priv`: see all privileges information and whether each of them is enabled or not
 
 ## :sun_with_face: Useful Python Libraries
 
@@ -355,6 +373,7 @@ print(m)
 2. **[URLDecoder](https://www.urldecoder.org/)**: URL decode and encode
 3. **[FactorDB](http://www.factordb.com/)**: Factorize any number
 4. **[XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)**: Copy-and-paste cross-site scripting cheat sheet
+5. **[CMD5](https://www.cmd5.com/)**: Hash to plaintext using a large dictionary
 
 ## :sun_with_face: Learning / Practicing Websites
 
@@ -362,9 +381,30 @@ print(m)
 2. **[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)**: An insecure web application for you to attack! ([reference solutions](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/appendix/solutions.html))
 3. **[MITRE ATT&CK Matrix](https://attack.mitre.org/)**: A list of attack techniques based on real world observations.
 
-## :sun_with_face: Curated GitHub Repos
+## :sun_with_face: Curated GitHub Repos / Toolkits
 
 1. **[XS-Leaks](https://github.com/xsleaks/xsleaks)**: XS-leak example code, past exploits explanation, link to xs-leak wiki and related materials.
+2. **[Gophish](https://github.com/gophish/gophish)**: Phishing toolkit to launch and tracking phishing campaigns ([official website](https://getgophish.com/)).
+
+## :sun_with_face: Common Security Acronyms
+
+1. **RDP**: Remote Desktop Protocol
+2. **IIS**: Internet Information Services
+3. **WAF**: Web Application Firewall
+4. **OT**: Operation Technology
+5. **AD**: Active Directory
+6. **LPE**: Local Privilege Escalation
+7. **RCE**: Remote Code Execution
+8. **SMB**: Server Message Block
+9. **LFI**: Local File Inclusion
+10. **SAM**: Security Account Manager
+11. **VNC**: Virtual Network Computing
+12. **OSINT**: Open-source Intelligence
+13. **ASHX**: ASP.NET Web Handler File, file extension of an ASP.NET web app
+14. **NTLM**: New Technology LAN Manager, used by Windows to hash passwords ([wiki](https://en.wikipedia.org/wiki/NT_LAN_Manager))
+15. **EDR**: Endpoint Detection and Response
+16. **IDS**: Intrusion Detection System
+17. **DC**: Domain Controller (AD vs DC: AD is a type of domain, DC is an important server on that domain)
 
 ## :sun_with_face: Special Thanks
 
