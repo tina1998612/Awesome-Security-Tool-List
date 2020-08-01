@@ -12,7 +12,7 @@ _Author: Lee Ting Ting_
 
 :gem: **[Common Commands & CLI](#sun_with_face-common-commands--cli)**
 
-:gem: **[Useful Python Scripts](#sun_with_face-useful-python-scripts)**
+:gem: **[Useful Python Libraries & Scripts](#sun_with_face-useful-python-libraries--scripts)**
 
 :gem: **[Online Tools](#sun_with_face-online-tools)**
 
@@ -193,8 +193,9 @@ _Author: Lee Ting Ting_
 25. **`nslookup <domain_name>`: See IP address of the domain**
 26. **`whoami`: Find out which user you are currently logged in**
     - `whoami /priv`: see all privileges information and whether each of them is enabled or not
+27. **``echo `nproc` ``: See the number of CPU cores**
 
-## :sun_with_face: Useful Python Libraries
+## :sun_with_face: Useful Python Libraries & Scripts
 
 1. **[dirsearch](https://github.com/maurosoria/dirsearch): A CLI to brute force directories and files in websites.**
 
@@ -367,6 +368,11 @@ m = pow(c, d, n)
 print(m)
 ```
 
+7. **Install all modules**
+
+- requirements.txt: `pip3 install -r requirements.txt` (or pip install)
+- setup.py: `python3 setup.py install`
+
 ## :sun_with_face: Online Tools
 
 1. **[HexDecode](https://www.convertstring.com/EncodeDecode/HexDecode)**: Convert hex to text
@@ -405,6 +411,9 @@ print(m)
 15. **EDR**: Endpoint Detection and Response
 16. **IDS**: Intrusion Detection System
 17. **DC**: Domain Controller (AD vs DC: AD is a type of domain, DC is an important server on that domain)
+18. **APT**: Advanced Persistent Threat, hackers gain unauthorized access to a computer network and remains undetected for an extended period ([wiki](https://en.wikipedia.org/wiki/Advanced_persistent_threat)).
+19. **CVE**: Common Vulnerabilities and Exposures
+20. **PPA**: Personal Package Archive
 
 ## :sun_with_face: Special Thanks
 
