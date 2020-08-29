@@ -380,6 +380,7 @@ print(m)
 3. **[FactorDB](http://www.factordb.com/)**: Factorize any number
 4. **[XSS Cheat Sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)**: Copy-and-paste cross-site scripting cheat sheet
 5. **[CMD5](https://www.cmd5.com/)**: Hash to plaintext using a large dictionary
+6. **[Cryptii](https://cryptii.com/)**: Extensive tool for encoding/decoding and encrypting/decrypting.
 
 ## :sun_with_face: Learning / Practicing Websites
 
