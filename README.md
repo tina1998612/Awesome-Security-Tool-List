@@ -12,6 +12,8 @@ _Author: Lee Ting Ting_
 
 :gem: **[Common Commands & CLI](#sun_with_face-common-commands--cli)**
 
+:gem: **[XSS Scripts](#sun_with_face-xss-scripts)**
+
 :gem: **[Useful Python Libraries & Scripts](#sun_with_face-useful-python-libraries--scripts)**
 
 :gem: **[Online Tools](#sun_with_face-online-tools)**
@@ -194,6 +196,14 @@ _Author: Lee Ting Ting_
 26. **`whoami`: Find out which user you are currently logged in**
     - `whoami /priv`: see all privileges information and whether each of them is enabled or not
 27. **``echo `nproc` ``: See the number of CPU cores**
+
+## :sun_with_face: XSS Scripts
+1. Popup alert: `"><iframe srcdoc="%3Csvg%2F%26%23x6f%3Bnload%3Dalert%281%29%3E"><"`
+    - `srcdoc` specifies the HTML content in iframe
+    - try to insert `<svg/onload=alert(1)>` but found that `o` will be replaced
+    - change `o` to `&#x6f;` with the `hex(ord('o'))` Python command  
+    - url encode `<svg/&#x6f;nload=alert(1)>` at [URLEncoder](https://www.urlencoder.org/)
+2. 
 
 ## :sun_with_face: Useful Python Libraries & Scripts
 
