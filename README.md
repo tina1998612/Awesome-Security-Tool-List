@@ -196,6 +196,9 @@ _Author: Lee Ting Ting_
 26. **`whoami`: Find out which user you are currently logged in**
     - `whoami /priv`: see all privileges information and whether each of them is enabled or not
 27. **`` echo `nproc`  ``: See the number of CPU cores**
+28. **`python GitHack.py http://your_url.git/`**
+    - `git clone https://github.com/lijiejie/GitHack.git` to download the script  
+    - `cd GitHack/`
 
 ## :sun_with_face: Web Scripts
 
