@@ -53,6 +53,8 @@ _Author: Lee Ting Ting_
    - Install version 2.10.4 on Windows [here](https://download.gimp.org/mirror/pub/gimp/v2.10/windows/) (there is a known bug in the latest version by the time of writing)
    - GNU: A Unix-like operating system and a collection of free softwares. GNU means "GNU's Not Unix!" ([wiki](https://en.wikipedia.org/wiki/GNU))
    - Can apply various filters to images for solving steganography problems
+6. **[Pixeebot](https://pixee.ai): Finds security and code quality issues in your code and creates merge-ready pull requests with recommended fixes.
+   - Install directly from the GitHub App Marketplace, or use the 'Get Started' > 'Install' buttons on Pixee's site (linked). 
 
 ## :sun_with_face: Common Commands & CLI
 
